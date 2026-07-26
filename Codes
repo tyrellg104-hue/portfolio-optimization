@@ -1,0 +1,83 @@
+#Step 1: below, finds all the stock price in my portfolio.
+import pandas as pd        # Data tables
+import numpy as np         # Math calculations
+import yfinance as yf      # Download stock prices
+import matplotlib.pyplot as plt  # Graphs
+
+from scipy.optimize import minimize  # Optimization algorithms
+
+
+stocks = [
+    "BMO.TO",
+    "GOOGL",
+    "CNQ.TO",
+    "LBLCF",
+    "SPY",
+    "CMR.TO",
+    "WMT",
+    "BNS.TO",
+    "NFLX"    
+]
+
+
+data = yf.download(
+    stocks,
+    start="2023-01-01",
+    end="2024-01-01"
+)
+
+
+prices = data["Close"]
+
+# this shows all column it doesn't hid anything
+pd.set_option("display.max_columns", None)
+pd.set_option("display.max_rows", None)
+
+
+# monthly end-of-month prices, resample means group my data into a different time frequency, "ME" is month end 
+
+monthly_prices = prices.resample("ME").last()
+print(monthly_prices)
+
+
+
+
+#Step 2: now i will find the return?- return is = (current price-Previous price)/ previous price
+
+# Download prices
+prices = data["Close"]
+
+# Get end-of-month prices
+monthly_prices = prices.resample("ME").last()
+
+# Calculate monthly returns
+monthly_returns = monthly_prices.pct_change().dropna()
+
+print("monthly return")
+print(monthly_returns)
+
+
+# step 3: calculate the expected return
+
+expected_returns = monthly_returns.mean()*12
+print("Expected Return")
+print(expected_returns)
+
+
+# step 3: this calculate volatility- this by pass the 
+
+volatility = monthly_returns.std() * np.sqrt(12)
+print("volatility")
+print(volatility)
+
+
+#step 4: create weighted portfolio base on my portfolio
+
+weights=np.array(
+    [.1203,.1080,.0785,.1539,.3118,.0480,.1110,.0441,.0236]
+    )
+#step 5:Calculate portfolio return- E(Rp)=wt E(R)
+
+portfolio_return=np.sum(weights*expected_returns)
+print("portfolio return")
+print(portfolio_return)
