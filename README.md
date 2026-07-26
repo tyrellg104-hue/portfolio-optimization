@@ -1,7 +1,7 @@
 # portfolio-optimization
 Hi, my name is Tyrell, and this is my first-ever project: portfolio optimization based on my Questrade portfolio.
 
-This project is an attempt to understand my portfolio and whether it optimizes.
+This project is an attempt to understand my portfolio and whether it optimizes base on using python
 # Following steps
 1) Calculate returns
 2) Risk
