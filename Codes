@@ -1,3 +1,9 @@
+After creating this code, I realized it's too crowded and isn't felxible so I need to change that. Not done:
+
+
+
+
+
 #Step 1: below, finds all the stock price in my portfolio.
 import pandas as pd        # Data tables
 import numpy as np         # Math calculations
@@ -64,14 +70,14 @@ print("Expected Return")
 print(expected_returns)
 
 
-# step 3: this calculate volatility- this by pass the 
+# step 3: this calculates volatility- this bypasses the 
 
 volatility = monthly_returns.std() * np.sqrt(12)
 print("volatility")
 print(volatility)
 
 
-#step 4: create weighted portfolio base on my portfolio
+#step 4: create weighted portfolio based on my portfolio
 
 weights=np.array(
     [.1203,.1080,.0785,.1539,.3118,.0480,.1110,.0441,.0236]
