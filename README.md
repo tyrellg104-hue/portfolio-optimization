@@ -1,5 +1,6 @@
-# portfolio-optimization
-Hi, I'm Tyrell, a Financial and Business Economics student at York University. I'm interested in applying data analytics, programming, and quantitative methods to solve problems in finance, particularly in risk management and investment analysis. I enjoy working with Python, financial modelling, and data-driven approaches to understand markets and improve decision-making.
+# A little bit about me.
+
+-Financial & Business Economics Student at York University.  Seeking an internship in risk management  / Treasury. -Currently studying for the FRM exams, Experience in Python coding, Stata, and R coding
 
 
 # Portfolio Optimization Using Python
@@ -18,7 +19,6 @@ The project follows these steps:
 
 2. **Measure Portfolio Risk**
    - Calculate volatility using standard deviation
-   - Annualize risk measures
 
 3. **Analyze Correlation**
    - Examine relationships between assets
